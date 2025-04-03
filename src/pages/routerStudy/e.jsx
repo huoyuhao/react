@@ -1,7 +1,8 @@
 export default function Page()  {
+  const a = null.slice();
   return (
     <>
-      <p>D</p>
+      <p>E</p>
     </>
   )
 }
