@@ -8,6 +8,7 @@ export default function Index() {
         <div className='flex flex-col'>
           <Link to="/routerStudy">路由学习</Link>
           <Link to="/reactFlow">reactFlow学习</Link>
+          <Link to="/zustand">zustand学习</Link>
         </div>
       </div>
     </>

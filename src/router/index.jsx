@@ -6,6 +6,7 @@ import Login from '../pages/common/Login';
 import NotFound from '../pages/common/404';
 import routerStudy from './module/routerStudy';
 import reactFlow from './module/reactFlow';
+import zustand from './module/zustand';
 
 // 创建router路由实例对象，并配置路由对应关系（路由数组）
 const router = createBrowserRouter([
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   },
   ...routerStudy,
   ...reactFlow,
+  ...zustand,
   {
       path: '*',
       element: <NotFound />
