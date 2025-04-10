@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/pages/routerStudy/d.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1744288395995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1744288536156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,25 @@\n+import { useState } from 'react';\n+\n+const Test = () => {\n+  return (\n+    <div>\n+    </div>\n+  )\n+}\n export default function Page()  {\n+  const [num, setNum] = useState(0);\n   const loginOut = () => {\n     //模拟登录成功\n     window.isLogin = false;\n   };\n-  console.log('test');\n+  console.log('D');\n   return (\n     <>\n       <p>D</p>\n+      <div>{num}</div>\n+      <div onClick={() => setNum(val => val + 1)}>新增</div>\n       <div onClick={loginOut}>注销登录</div>\n+      <Test />\n     </>\n   )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744288547693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n import { useState } from 'react';\n \n const Test = () => {\n+  console.log('test');\n   return (\n     <div>\n+      <p>test</p>\n     </div>\n   )\n }\n export default function Page()  {\n"
+                },
+                {
+                    "date": 1744288592433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n import { useState } from 'react';\n \n const Test = () => {\n   console.log('test');\n+  useEffect(() => {\n+    console.log('useEffect  - test');\n+\n+  })\n   return (\n     <div>\n       <p>test</p>\n     </div>\n"
+                },
+                {
+                    "date": 1744288597522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,31 @@\n+import { useState, useEffect } from 'react';\n+\n+const Test = () => {\n+  console.log('test');\n+  useEffect(() => {\n+    console.log('useEffect - test');\n+\n+  })\n+  return (\n+    <div>\n+      <p>test</p>\n+    </div>\n+  )\n+}\n+export default function Page()  {\n+  const [num, setNum] = useState(0);\n+  const loginOut = () => {\n+    //模拟登录成功\n+    window.isLogin = false;\n+  };\n+  console.log('D');\n+  return (\n+    <>\n+      <p>D</p>\n+      <div>{num}</div>\n+      <div onClick={() => setNum(val => val + 1)}>新增</div>\n+      <div onClick={loginOut}>注销登录</div>\n+      <Test />\n+    </>\n+  )\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744288922968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { useState, useEffect } from 'react';\n+import { useState, useEffect, useMemo } from 'react';\n \n const Test = () => {\n   console.log('test');\n   useEffect(() => {\n@@ -11,8 +11,9 @@\n       <p>test</p>\n     </div>\n   )\n }\n+const TestMemo = useMemo(Test)\n export default function Page()  {\n   const [num, setNum] = useState(0);\n   const loginOut = () => {\n     //模拟登录成功\n@@ -24,39 +25,9 @@\n       <p>D</p>\n       <div>{num}</div>\n       <div onClick={() => setNum(val => val + 1)}>新增</div>\n       <div onClick={loginOut}>注销登录</div>\n-      <Test />\n+      {/* <Test /> */}\n+      <TestMemo />\n     </>\n   )\n-}\n-import { useState } from 'react';\n-\n-const Test = () => {\n-  console.log('test');\n-  useEffect(() => {\n-    console.log('useEffect  - test');\n-\n-  })\n-  return (\n-    <div>\n-      <p>test</p>\n-    </div>\n-  )\n-}\n-export default function Page()  {\n-  const [num, setNum] = useState(0);\n-  const loginOut = () => {\n-    //模拟登录成功\n-    window.isLogin = false;\n-  };\n-  console.log('D');\n-  return (\n-    <>\n-      <p>D</p>\n-      <div>{num}</div>\n-      <div onClick={() => setNum(val => val + 1)}>新增</div>\n-      <div onClick={loginOut}>注销登录</div>\n-      <Test />\n-    </>\n-  )\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1744289041589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { useState, useEffect, useMemo } from 'react';\n+import { useState, useEffect, memo } from 'react';\n \n const Test = () => {\n   console.log('test');\n   useEffect(() => {\n@@ -11,9 +11,9 @@\n       <p>test</p>\n     </div>\n   )\n }\n-const TestMemo = useMemo(Test)\n+const TestMemo = memo(Test)\n export default function Page()  {\n   const [num, setNum] = useState(0);\n   const loginOut = () => {\n     //模拟登录成功\n"
+                },
+                {
+                    "date": 1744289057215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n       <p>D</p>\n       <div>{num}</div>\n       <div onClick={() => setNum(val => val + 1)}>新增</div>\n       <div onClick={loginOut}>注销登录</div>\n-      {/* <Test /> */}\n-      <TestMemo />\n+      <Test />\n+      {/* <TestMemo /> */}\n     </>\n   )\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1744288395995,
+            "name": "Commit-0",
+            "content": "export default function Page()  {\n  const loginOut = () => {\n    //模拟登录成功\n    window.isLogin = false;\n  };\n  console.log('test');\n  return (\n    <>\n      <p>D</p>\n      <div onClick={loginOut}>注销登录</div>\n    </>\n  )\n}"
+        }
+    ]
+}

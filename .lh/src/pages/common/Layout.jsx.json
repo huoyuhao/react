@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/pages/common/Layout.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1744288239312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1744288255791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   return (\n     <>\n       <div>Header</div>\n       <div>{num}</div>\n-      <div onClick={(val) => setNum(val + 1)}></div>\n+      <div onClick={(val) => setNum(val + 1)}>新增</div>\n       {/* 使用 <Outlet />组件 配置 二级路由 渲染位置（二级路由出口）； */}\n       <Outlet />\n     </>\n   )\n"
+                },
+                {
+                    "date": 1744288367200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   return (\n     <>\n       <div>Header</div>\n       <div>{num}</div>\n-      <div onClick={(val) => setNum(val + 1)}>新增</div>\n+      <div onClick={() => setNum(val => val + 1)}>新增</div>\n       {/* 使用 <Outlet />组件 配置 二级路由 渲染位置（二级路由出口）； */}\n       <Outlet />\n     </>\n   )\n"
+                },
+                {
+                    "date": 1744289070974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,9 @@\n-import { useState } from 'react';\n import { Outlet } from 'react-router-dom';\n export default function Page()  {\n-  const [num, setNum] = useState(0);\n   return (\n     <>\n       <div>Header</div>\n-      <div>{num}</div>\n-      <div onClick={() => setNum(val => val + 1)}>新增</div>\n       {/* 使用 <Outlet />组件 配置 二级路由 渲染位置（二级路由出口）； */}\n       <Outlet />\n     </>\n   )\n"
+                }
+            ],
+            "date": 1744288239312,
+            "name": "Commit-0",
+            "content": "import { useState } from 'react';\nimport { Outlet } from 'react-router-dom';\nexport default function Page()  {\n  const [num, setNum] = useState(0);\n  return (\n    <>\n      <div>Header</div>\n      <div>{num}</div>\n      <div onClick={(val) => setNum(val + 1)}></div>\n      {/* 使用 <Outlet />组件 配置 二级路由 渲染位置（二级路由出口）； */}\n      <Outlet />\n    </>\n  )\n}"
+        }
+    ]
+}
